@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 
-project_name = "Emotion State Prediction"
+project_name = "Emotion_State_Prediction"
 
 
 list_of_files = [
@@ -12,6 +12,9 @@ list_of_files = [
     f"{project_name}/notebooks/EDA.ipynb",
 
     f"{project_name}/src/__init__.py",
+    f"{project_name}/src/exception.py",
+    f"{project_name}/src/logger.py",
+    f"{project_name}/src/utils.py",
 
     f"{project_name}/src/data/__init__.py",
     f"{project_name}/src/data/load_data.py",
@@ -28,10 +31,11 @@ list_of_files = [
     f"{project_name}/src/pipeline/training_pipeline.py",
     f"{project_name}/src/pipeline/inference_pipeline.py",
 
-    f"{project_name}/artifacts/.gitkeep",
+    f"{project_name}/artifacts/.gitkeep",    
 
-    f"{project_name}/config/config.yaml",
-
+    "app.py",
+    "readme.md",
+    "requirements.txt",
     "app.py",
 
     f"{project_name}/requirements.txt",
