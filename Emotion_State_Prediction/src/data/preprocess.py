@@ -1,6 +1,6 @@
 import sys
-from src.logger import logging
-from src.exception import customexception
+from Emotion_State_Prediction.src.logger import logging
+from Emotion_State_Prediction.src.exception import customexception
 
 def clean_data(df):
     try:

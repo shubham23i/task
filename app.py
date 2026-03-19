@@ -1,11 +1,22 @@
-from Emotion_State_Prediction.src.logger import logging
+from Emotion_State_Prediction.src.pipeline.training_pipeline import run_training
+from Emotion_State_Prediction.src.pipeline.inference_pipeline import run_inference
 import sys
-from Emotion_State_Prediction.src.exception import customexception
 
-if __name__=='__main__':
-    try:
-        a=1/0
-    except Exception as e:
-        logging.info("hi")
-        raise customexception(e,sys)
-        
+
+def main():
+    if len(sys.argv) < 2:
+        print("Usage: python app.py [train|predict]")
+        return
+
+    if sys.argv[1] == "train":
+        run_training()
+
+    elif sys.argv[1] == "predict":
+        run_inference()
+
+    else:
+        print("Invalid option")
+
+
+if __name__ == "__main__":
+    main()

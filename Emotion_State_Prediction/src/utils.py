@@ -1,7 +1,7 @@
 import pickle
 import sys
-from src.logger import logging
-from src.exception import customexception
+from Emotion_State_Prediction.src.logger import logging
+from Emotion_State_Prediction.src.exception import customexception
 
 def save_object(file_path, obj):
     try:

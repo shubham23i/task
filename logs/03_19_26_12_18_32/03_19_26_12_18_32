@@ -1,0 +1,6 @@
+[ 2026-03-19 12:18:33,476 ] 16 root - INFO - Training pipeline started
+[ 2026-03-19 12:18:33,476 ] 8 root - INFO - Loading train dataset
+[ 2026-03-19 12:18:33,491 ] 10 root - INFO - Train data shape: (1200, 13)
+[ 2026-03-19 12:18:33,491 ] 7 root - INFO - Starting data cleaning
+[ 2026-03-19 12:18:33,493 ] 10 root - INFO - Data cleaning completed
+[ 2026-03-19 12:18:33,493 ] 11 root - INFO - Splitting features and target

@@ -2,14 +2,14 @@ import sys
 import numpy as np
 from sklearn.model_selection import train_test_split
 
-from src.logger import logging
-from src.exception import customexception
+from Emotion_State_Prediction.src.logger import logging
+from Emotion_State_Prediction.src.exception import customexception
 
-from src.data.load_data import load_train_data
-from src.data.preprocess import preprocess_train
-from src.features.build_features import split_features_target, scale_train_features
+from Emotion_State_Prediction.src.data.load_data import load_train_data
+from Emotion_State_Prediction.src.data.preprocess import preprocess_train
+from Emotion_State_Prediction.src.features.build_features import split_features_target, scale_train_features
 
-from src.models.train import ModelTrainer
+from Emotion_State_Prediction.src.models.train import ModelTrainer
 
 def run_training():
     try:
@@ -22,7 +22,7 @@ def run_training():
 
         X_scaled = scale_train_features(X)
 
-        # Convert to numpy
+        
         X_train, X_test, y_train, y_test = train_test_split(
             X_scaled, y, test_size=0.2, random_state=42
         )

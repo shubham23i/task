@@ -1,12 +1,14 @@
-import pandas as pd
 import sys
-from src.logger import logging
-from src.exception import customexception
+import pandas as pd
 
-from src.data.load_data import load_test_data
-from src.data.preprocess import preprocess_test
-from src.features.build_features import scale_test_features
-from src.models.predict import load_model, predict
+from Emotion_State_Prediction.src.logger import logging
+from Emotion_State_Prediction.src.exception import customexception
+
+from Emotion_State_Prediction.src.data.load_data import load_test_data
+from Emotion_State_Prediction.src.data.preprocess import preprocess_test
+from Emotion_State_Prediction.src.features.build_features import scale_test_features
+from Emotion_State_Prediction.src.models.predict import load_model, predict_with_confidence
+
 
 def run_inference():
     try:
@@ -14,25 +16,33 @@ def run_inference():
 
         df = load_test_data()
 
-        ids = df["id"] if "id" in df.columns else None
+        logging.info(f"Test data shape: {df.shape}")
 
-        if "target" in df.columns:
-            df = df.drop(columns=["target"])
+        if "id" in df.columns:
+            ids = df["id"]
+            df = df.drop(columns=["id"])
+        else:
+            ids = range(len(df))
 
         df = preprocess_test(df)
+
         X_scaled = scale_test_features(df)
 
         model = load_model("artifacts/model.pkl")
-        preds = predict(model, X_scaled)
+
+        preds, confidence = predict_with_confidence(model, X_scaled)
 
         output = pd.DataFrame({
-            "id": ids if ids is not None else range(len(preds)),
-            "prediction": preds
+            "id": ids,
+            "prediction": preds,
+            "confidence": confidence
         })
 
         output.to_csv("artifacts/predictions.csv", index=False)
 
-        logging.info("Inference pipeline completed")
+        logging.info("Predictions saved to artifacts/predictions.csv")
+
+        print("Inference completed successfully")
 
     except Exception as e:
         raise customexception(e, sys)

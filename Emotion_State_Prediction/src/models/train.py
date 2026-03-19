@@ -23,9 +23,9 @@ from xgboost import XGBClassifier
 import mlflow
 import dagshub
 
-from src.exception import customexception
-from src.logger import logging
-from src.utils import save_object
+from Emotion_State_Prediction.src.exception import customexception
+from Emotion_State_Prediction.src.logger import logging
+from Emotion_State_Prediction.src.utils import save_object
 
 @dataclass
 class ModelTrainerConfig:
