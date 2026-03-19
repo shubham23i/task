@@ -1,0 +1,18 @@
+[ 2026-03-19 12:43:47,296 ] 22 root - INFO - Training pipeline started
+[ 2026-03-19 12:43:47,296 ] 8 root - INFO - Loading train dataset
+[ 2026-03-19 12:43:47,296 ] 10 root - INFO - Train data shape: (1200, 13)
+[ 2026-03-19 12:43:47,296 ] 25 root - INFO - Data loaded with shape: (1200, 13)
+[ 2026-03-19 12:43:47,296 ] 7 root - INFO - Starting data cleaning
+[ 2026-03-19 12:43:47,296 ] 10 root - INFO - Data cleaning completed
+[ 2026-03-19 12:43:47,296 ] 28 root - INFO - Data preprocessing completed
+[ 2026-03-19 12:43:47,296 ] 12 root - INFO - Splitting features and target
+[ 2026-03-19 12:43:47,296 ] 17 root - INFO - Feature shape: (1200, 12)
+[ 2026-03-19 12:43:47,296 ] 18 root - INFO - Target shape: (1200,)
+[ 2026-03-19 12:43:47,296 ] 32 root - INFO - Features shape: (1200, 12)
+[ 2026-03-19 12:43:47,296 ] 33 root - INFO - Target shape: (1200,)
+[ 2026-03-19 12:43:47,312 ] 39 root - INFO - X_train shape: (960, 12)
+[ 2026-03-19 12:43:47,312 ] 40 root - INFO - X_test shape: (240, 12)
+[ 2026-03-19 12:43:47,313 ] 28 root - INFO - Transforming training features using TF-IDF
+[ 2026-03-19 12:43:47,317 ] 38 root - INFO - Vectorizer saved
+[ 2026-03-19 12:43:47,317 ] 48 root - INFO - Transforming test features using saved TF-IDF
+[ 2026-03-19 12:43:47,339 ] 45 root - INFO - Feature transformation completed

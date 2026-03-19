@@ -1,6 +1,7 @@
 import sys
+import os
 import pickle
-from sklearn.preprocessing import StandardScaler
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 from Emotion_State_Prediction.src.logger import logging
 from Emotion_State_Prediction.src.exception import customexception
@@ -10,7 +11,7 @@ def split_features_target(df, target_column="emotional_state"):
     try:
         logging.info("Splitting features and target")
 
-        X = df.drop(columns=[target_column])
+        X = df["emotional_state"] 
         y = df[target_column]
 
         logging.info(f"Feature shape: {X.shape}")
@@ -22,31 +23,39 @@ def split_features_target(df, target_column="emotional_state"):
         raise customexception(e, sys)
 
 
-def scale_train_features(X_train):
+def transform_train_features(X_train):
     try:
-        logging.info("Scaling training features")
+        logging.info("Transforming training features using TF-IDF")
 
-        scaler = StandardScaler()
-        X_scaled = scaler.fit_transform(X_train)
+        os.makedirs("artifacts", exist_ok=True)
 
-        with open("artifacts/scaler.pkl", "wb") as f:
-            pickle.dump(scaler, f)
+        vectorizer = TfidfVectorizer(max_features=5000)
+        X_transformed = vectorizer.fit_transform(X_train)
 
-        logging.info("Scaler saved to artifacts/scaler.pkl")
+        with open("artifacts/vectorizer.pkl", "wb") as f:
+            pickle.dump(vectorizer, f)
 
-        return X_scaled
+        logging.info("Vectorizer saved")
+
+        return X_transformed
 
     except Exception as e:
         raise customexception(e, sys)
 
-def scale_test_features(X_test):
+
+def transform_test_features(X_test):
     try:
-        logging.info("Scaling test features")
+        logging.info("Transforming test features using saved TF-IDF")
 
-        with open("artifacts/scaler.pkl", "rb") as f:
-            scaler = pickle.load(f)
+        if not os.path.exists("artifacts/vectorizer.pkl"):
+            raise FileNotFoundError("vectorizer.pkl not found. Run training first.")
 
-        return scaler.transform(X_test)
+        with open("artifacts/vectorizer.pkl", "rb") as f:
+            vectorizer = pickle.load(f)
+
+        X_transformed = vectorizer.transform(X_test)
+
+        return X_transformed
 
     except Exception as e:
         raise customexception(e, sys)

@@ -1,0 +1,9 @@
+[ 2026-03-19 12:35:30,954 ] 16 root - INFO - Training pipeline started
+[ 2026-03-19 12:35:30,954 ] 8 root - INFO - Loading train dataset
+[ 2026-03-19 12:35:30,954 ] 10 root - INFO - Train data shape: (1200, 13)
+[ 2026-03-19 12:35:30,954 ] 7 root - INFO - Starting data cleaning
+[ 2026-03-19 12:35:30,970 ] 10 root - INFO - Data cleaning completed
+[ 2026-03-19 12:35:30,970 ] 11 root - INFO - Splitting features and target
+[ 2026-03-19 12:35:30,970 ] 16 root - INFO - Feature shape: (1200, 12)
+[ 2026-03-19 12:35:30,970 ] 17 root - INFO - Target shape: (1200,)
+[ 2026-03-19 12:35:30,970 ] 27 root - INFO - Transforming text features using TF-IDF

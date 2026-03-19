@@ -6,7 +6,7 @@ from Emotion_State_Prediction.src.exception import customexception
 
 from Emotion_State_Prediction.src.data.load_data import load_test_data
 from Emotion_State_Prediction.src.data.preprocess import preprocess_test
-from Emotion_State_Prediction.src.features.build_features import scale_test_features
+from Emotion_State_Prediction.src.features.build_features import transform_test_features
 from Emotion_State_Prediction.src.models.predict import load_model, predict_with_confidence
 
 
@@ -26,7 +26,7 @@ def run_inference():
 
         df = preprocess_test(df)
 
-        X_scaled = scale_test_features(df)
+        X_scaled = transform_test_features(df)
 
         model = load_model("artifacts/model.pkl")
 

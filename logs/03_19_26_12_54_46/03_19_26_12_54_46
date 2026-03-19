@@ -1,0 +1,49 @@
+[ 2026-03-19 12:54:47,710 ] 23 root - INFO - Training pipeline started
+[ 2026-03-19 12:54:47,710 ] 8 root - INFO - Loading train dataset
+[ 2026-03-19 12:54:47,710 ] 10 root - INFO - Train data shape: (1200, 13)
+[ 2026-03-19 12:54:47,710 ] 26 root - INFO - Data loaded with shape: (1200, 13)
+[ 2026-03-19 12:54:47,710 ] 7 root - INFO - Starting data cleaning
+[ 2026-03-19 12:54:47,710 ] 10 root - INFO - Data cleaning completed
+[ 2026-03-19 12:54:47,710 ] 29 root - INFO - Data preprocessing completed
+[ 2026-03-19 12:54:47,727 ] 12 root - INFO - Splitting features and target
+[ 2026-03-19 12:54:47,727 ] 17 root - INFO - Feature shape: (1200,)
+[ 2026-03-19 12:54:47,732 ] 18 root - INFO - Target shape: (1200,)
+[ 2026-03-19 12:54:47,732 ] 35 root - INFO - Features shape: (1200,)
+[ 2026-03-19 12:54:47,732 ] 36 root - INFO - Target shape: (1200,)
+[ 2026-03-19 12:54:47,732 ] 50 root - INFO - X_train shape: (960,)
+[ 2026-03-19 12:54:47,732 ] 51 root - INFO - X_test shape: (240,)
+[ 2026-03-19 12:54:47,732 ] 28 root - INFO - Transforming training features using TF-IDF
+[ 2026-03-19 12:54:47,732 ] 38 root - INFO - Vectorizer saved
+[ 2026-03-19 12:54:47,732 ] 48 root - INFO - Transforming test features using saved TF-IDF
+[ 2026-03-19 12:54:47,754 ] 56 root - INFO - Feature transformation completed
+[ 2026-03-19 12:54:47,754 ] 64 root - INFO - Train and test arrays created
+[ 2026-03-19 12:54:48,843 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2026-03-19 12:54:48,859 ] 107 dagshub - INFO - Accessing as shubham23i
+[ 2026-03-19 12:54:49,983 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/repos/shubham23i/Emotion_State_Prediction "HTTP/1.1 200 OK"
+[ 2026-03-19 12:54:51,052 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2026-03-19 12:54:51,055 ] 107 dagshub - INFO - Initialized MLflow to track repo "shubham23i/Emotion_State_Prediction"
+[ 2026-03-19 12:54:51,056 ] 107 dagshub - INFO - Repository shubham23i/Emotion_State_Prediction initialized!
+[ 2026-03-19 12:54:51,056 ] 47 root - INFO - Splitting training and test data
+[ 2026-03-19 12:54:51,056 ] 106 root - INFO - Starting model training with GridSearchCV
+[ 2026-03-19 12:54:51,056 ] 110 root - INFO - Training Logistic Regression
+[ 2026-03-19 12:54:54,755 ] 127 root - INFO - Logistic Regression Accuracy: 1.0
+[ 2026-03-19 12:54:54,755 ] 110 root - INFO - Training KNN
+[ 2026-03-19 12:54:54,868 ] 127 root - INFO - KNN Accuracy: 1.0
+[ 2026-03-19 12:54:54,868 ] 110 root - INFO - Training Decision Tree
+[ 2026-03-19 12:54:54,935 ] 127 root - INFO - Decision Tree Accuracy: 1.0
+[ 2026-03-19 12:54:54,935 ] 110 root - INFO - Training Random Forest
+[ 2026-03-19 12:54:55,559 ] 127 root - INFO - Random Forest Accuracy: 1.0
+[ 2026-03-19 12:54:55,559 ] 110 root - INFO - Training Gradient Boosting
+[ 2026-03-19 12:54:56,749 ] 127 root - INFO - Gradient Boosting Accuracy: 1.0
+[ 2026-03-19 12:54:56,749 ] 110 root - INFO - Training XGBoost
+[ 2026-03-19 12:54:57,086 ] 127 root - INFO - XGBoost Accuracy: 1.0
+[ 2026-03-19 12:54:57,086 ] 110 root - INFO - Training CatBoost
+[ 2026-03-19 12:54:58,422 ] 127 root - INFO - CatBoost Accuracy: 1.0
+[ 2026-03-19 12:54:58,422 ] 110 root - INFO - Training AdaBoost
+[ 2026-03-19 12:54:58,992 ] 127 root - INFO - AdaBoost Accuracy: 0.3333333333333333
+[ 2026-03-19 12:54:58,993 ] 137 root - INFO - Best Model: Logistic Regression | Score: 1.0
+[ 2026-03-19 12:55:14,642 ] 8 root - INFO - Saving object to artifacts\model.pkl
+[ 2026-03-19 12:55:14,644 ] 11 root - INFO - Object saved successfully
+[ 2026-03-19 12:55:14,645 ] 161 root - INFO - Model saved successfully
+[ 2026-03-19 12:55:14,645 ] 71 root - INFO - Best model score: 1.0
+[ 2026-03-19 12:55:14,645 ] 72 root - INFO - Training pipeline completed

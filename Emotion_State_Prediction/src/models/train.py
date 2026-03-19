@@ -59,7 +59,7 @@ class ModelTrainer:
                 "Random Forest": RandomForestClassifier(random_state=42),
                 "Gradient Boosting": GradientBoostingClassifier(random_state=42),
                 "XGBoost": XGBClassifier(eval_metric="logloss", use_label_encoder=False),
-                "CatBoost": CatBoostClassifier(verbose=False),
+                "CatBoost":CatBoostClassifier(verbose=0,train_dir="artifacts/catboost_info"),
                 "AdaBoost": AdaBoostClassifier(random_state=42),
             }
 
