@@ -29,9 +29,8 @@ def run_training():
         logging.info("Data preprocessing completed")
 
         X, y = split_features_target(df, target_column="emotional_state")
-        print("Dataset size:", len(y))
-        print("Unique labels:", set(y))
-        print("Sample texts:", X.head())
+        logging.info(f"Dataset size: {len(y)}")
+        logging.info(f"Unique labels: {set(y)}")
         logging.info(f"Features shape: {X.shape}")
         logging.info(f"Target shape: {y.shape}")
 

@@ -10,8 +10,7 @@ from Emotion_State_Prediction.src.exception import customexception
 def split_features_target(df, target_column="emotional_state"):
     try:
         logging.info("Splitting features and target")
-
-        X = df["emotional_state"] 
+        X = df["journal_text"]
         y = df[target_column]
 
         logging.info(f"Feature shape: {X.shape}")

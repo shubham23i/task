@@ -6,7 +6,7 @@ def clean_data(df):
     try:
         logging.info("Starting data cleaning")
         df = df.drop_duplicates()
-        df = df.fillna(method='ffill')
+        df = df.ffill()
         logging.info("Data cleaning completed")
         return df
     except Exception as e:
