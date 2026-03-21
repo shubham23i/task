@@ -30,6 +30,7 @@ list_of_files = [
     f"{project_name}/src/pipeline/__init__.py",
     f"{project_name}/src/pipeline/training_pipeline.py",
     f"{project_name}/src/pipeline/inference_pipeline.py",
+    f"{project_name}/src/pipeline/decision_engine.py",
 
     f"{project_name}/artifacts/.gitkeep",    
 

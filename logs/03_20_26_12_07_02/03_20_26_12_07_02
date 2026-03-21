@@ -1,0 +1,18 @@
+[ 2026-03-20 12:07:10,254 ] 8 root - INFO - Loading train dataset
+[ 2026-03-20 12:07:10,269 ] 10 root - INFO - Train data shape: (1200, 13)
+[ 2026-03-20 12:07:10,278 ] 7 root - INFO - Starting data cleaning
+[ 2026-03-20 12:07:10,286 ] 10 root - INFO - Data cleaning completed
+[ 2026-03-20 12:07:10,286 ] 12 root - INFO - Splitting features and target
+[ 2026-03-20 12:07:10,286 ] 16 root - INFO - Feature shape: (1200,)
+[ 2026-03-20 12:07:10,286 ] 17 root - INFO - Target shape: (1200,)
+[ 2026-03-20 12:07:10,303 ] 27 root - INFO - Transforming training features using TF-IDF
+[ 2026-03-20 12:07:10,343 ] 37 root - INFO - Vectorizer saved
+[ 2026-03-20 12:07:10,343 ] 47 root - INFO - Transforming test features using saved TF-IDF
+[ 2026-03-20 12:07:12,427 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2026-03-20 12:07:12,436 ] 107 dagshub - INFO - Accessing as shubham23i
+[ 2026-03-20 12:07:14,468 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/repos/shubham23i/Emotion_State_Prediction "HTTP/1.1 200 OK"
+[ 2026-03-20 12:07:15,841 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2026-03-20 12:07:15,847 ] 107 dagshub - INFO - Initialized MLflow to track repo "shubham23i/Emotion_State_Prediction"
+[ 2026-03-20 12:07:15,847 ] 107 dagshub - INFO - Repository shubham23i/Emotion_State_Prediction initialized!
+[ 2026-03-20 12:13:01,846 ] 8 root - INFO - Saving object to artifacts\model.pkl
+[ 2026-03-20 12:13:01,846 ] 11 root - INFO - Object saved successfully

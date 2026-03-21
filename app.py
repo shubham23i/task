@@ -1,6 +1,7 @@
+import sys
 from Emotion_State_Prediction.src.pipeline.training_pipeline import run_training
 from Emotion_State_Prediction.src.pipeline.inference_pipeline import run_inference
-import sys
+from Emotion_State_Prediction.src.data.load_data import load_test_data
 
 
 def main():
@@ -8,11 +9,16 @@ def main():
         print("Usage: python app.py [train|predict]")
         return
 
-    if sys.argv[1] == "train":
+    command = sys.argv[1]
+
+    if command == "train":
         run_training()
 
-    elif sys.argv[1] == "predict":
-        run_inference()
+    elif command == "predict":
+        df = load_test_data()
+        result = run_inference(df)
+        result.to_csv("predictions.csv", index=False)
+        print("Predictions saved")
 
     else:
         print("Invalid option")
